@@ -6,6 +6,7 @@ setup(
     scripts=['test_rucio.py'],
     install_requires=[
         'locustio',
+        'pyzmq',
         'fts3-rest>=3.2.28'
     ],
     dependency_links=[

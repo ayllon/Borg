@@ -42,6 +42,15 @@ class RucioUseCase(TaskSet):
         )
         self.job_id = response
 
+    @task(200)
+    def delete(self):
+        response = self.client.submit(
+            {
+                "delete": ["mock://file/path"]
+            }
+        )
+        self.job_id = response
+
 
 class RucioLocust(FTS3Locust):
     task_set = RucioUseCase
